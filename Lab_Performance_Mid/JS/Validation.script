@@ -16,7 +16,7 @@ function calculateTotal() {
     if (qty < 0) {
         quantity.value = 0
         totalPrice.value = 0
-        errorText.innerText = "Quantity cannot be less than 0"
+        errorText.innerText = "Total Quantity cannot be less than 0"
         return
     }
 
@@ -26,7 +26,7 @@ function calculateTotal() {
     totalPrice.value = result
 
     if (result > 1000) {
-        alert("You got a gift coupon")
+        alert("Congratulations! You got a gift coupon")
     }
 }
 
