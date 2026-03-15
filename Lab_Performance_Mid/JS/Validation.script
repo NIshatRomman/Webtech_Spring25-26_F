@@ -1,1 +1,33 @@
+var unitPrice = document.getElementById("unitPrice")
+var quantity = document.getElementById("quantity")
+var totalPrice = document.getElementById("totalPrice")
+var errorText = document.getElementById("errorText")
 
+function calculateTotal() {
+    var price = Number(unitPrice.value)
+    var qty = Number(quantity.value)
+
+    if (quantity.value === "") {
+        totalPrice.value = 0
+        errorText.innerText = ""
+        return
+    }
+
+    if (qty < 0) {
+        quantity.value = 0
+        totalPrice.value = 0
+        errorText.innerText = "Quantity cannot be less than 0"
+        return
+    }
+
+    errorText.innerText = ""
+
+    var result = price * qty * 30
+    totalPrice.value = result
+
+    if (result > 1000) {
+        alert("You got a gift coupon")
+    }
+}
+
+quantity.addEventListener("input", calculateTotal)
