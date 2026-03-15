@@ -1,1 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management Page</title>
+    <link rel="stylesheet" href="../Design/Style.css">
+</head>
+<body>
+    <div class="box">
+        <h1>Product Management Page</h1>
 
+        <label for="unitPrice">Unit Price:</label>
+        <input type="number" id="unitPrice" value="1000" readonly>
+
+        <label for="quantity">Quantity per Day:</label>
+        <input type="number" id="quantity" placeholder="Enter quantity per day">
+
+        <label for="totalPrice">Total Price for 30 Days:</label>
+        <input type="text" id="totalPrice" value="0" readonly>
+
+        <p id="errorText"></p>
+    </div>
+
+    <script type="text/javascript" src="../JS/Validation.script"></script>
+</body>
+</html>
