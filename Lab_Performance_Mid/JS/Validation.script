@@ -1,33 +1,27 @@
-var unitPrice = document.getElementById("unitPrice")
-var quantity = document.getElementById("quantity")
-var totalPrice = document.getElementById("totalPrice")
-var errorText = document.getElementById("errorText")
+const itemCost = 1000;
+const totalDays = 30;
+const amountInput = document.getElementById("quantityPerDay");
 
-function calculateTotal() {
-    var price = Number(unitPrice.value)
-    var qty = Number(quantity.value)
-
-    if (quantity.value === "") {
-        totalPrice.value = 0
-        errorText.innerText = ""
-        return
-    }
-
-    if (qty < 0) {
-        quantity.value = 0
-        totalPrice.value = 0
-        errorText.innerText = "Total Quantity cannot be less than 0"
-        return
-    }
-
-    errorText.innerText = ""
-
-    var result = price * qty * 30
-    totalPrice.value = result
-
-    if (result > 1000) {
-        alert("Congratulations! You got a gift coupon")
+function check_quantity() {
+    const amount = amountInput.value;
+    if (amount < 0) {
+        document.getElementById("errorValue").innerHTML = "Quantity cannot be negative.";
+        amountInput.value = 0;
+    } 
+    else {
+        document.getElementById("errorValue").innerHTML = "";
     }
 }
 
-quantity.addEventListener("input", calculateTotal)
+function total_price() {
+    const amount = amountInput.value;
+    const finalTotal = itemCost * amount * totalDays;
+    document.getElementById("totalPrice").value = finalTotal;
+
+    if (finalTotal > 1000) {
+        alert("Congratulations! You have earned a gift coupon.");
+    }
+    else {
+        
+    }
+}
